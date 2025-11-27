@@ -258,23 +258,24 @@ namespace ALM_LinkedList
 
 
                     Item helpItem = FirstItem.copy().NextItem;
-                    while (helpItem != selectedItem)
+                    while (helpItem != null)
                     {
 
                         helpItem = helpItem.NextItem;
+                        if (helpItem == selectedItem)
+                        {
+
+
+                            selectedItem.PrevItem.NextItem = selectedItem.NextItem;
+
+                            selectedItem.NextItem.PrevItem = selectedItem.PrevItem;
+
+                            selectedItem = null;
+                            break;
+
+                        }
                     }
-                    if (helpItem == selectedItem)
-                    {
-                        
-
-                        selectedItem.PrevItem.NextItem = selectedItem.NextItem;
-
-                        selectedItem.NextItem.PrevItem = selectedItem.PrevItem;
-
-                        selectedItem = null;
-
-                                                 
-                    }
+                    
                 }
                 
 
