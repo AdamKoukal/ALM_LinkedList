@@ -256,15 +256,12 @@ namespace ALM_LinkedList
                 else
                 {
 
-
-                    Item helpItem = FirstItem.copy().NextItem;
+                    Item helpItem = FirstItem.copy();
                     while (helpItem != null)
                     {
-
                         helpItem = helpItem.NextItem;
                         if (helpItem == selectedItem)
                         {
-
 
                             selectedItem.PrevItem.NextItem = selectedItem.NextItem;
 
@@ -280,6 +277,7 @@ namespace ALM_LinkedList
                 
 
             }
+            Console.ReadLine();
         }
             /*public void addLastOld(Item item) 
             {
